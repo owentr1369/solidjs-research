@@ -1,23 +1,20 @@
 import logo from './logo.svg';
 import styles from './App.module.css';
+import Card from './components/Card';
 
 function App() {
+  const data = [1, 2, 3]
   return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
+    <div className={styles.App}>
+      <header>
+        <h1>Ninja Merch</h1>
       </header>
+      <img src={logo} alt="logo" style={{ width: '100px', height: 'auto', margin: '20px auto' }} />
+      <div>
+        {data.map((item) => (
+          <Card></Card>
+        ))}
+      </div>
     </div>
   );
 }
